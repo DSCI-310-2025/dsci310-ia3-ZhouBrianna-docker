@@ -16,6 +16,9 @@ RUN Rscript -e 'renv::restore(confirm = FALSE)'
 # install cowsay package
 RUN Rscript -e "remotes::install_version('cowsay', version = '1.0.0')"
 
+# install dplyr package
+RUN Rscript -e 'install.packages("dplyr", repos="https://cran.rstudio.com")'
+
 # Expose RStudio default port
 EXPOSE 8787
 
